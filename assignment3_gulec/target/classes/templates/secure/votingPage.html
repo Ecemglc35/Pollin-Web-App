@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Voting Page</title>
+    <!--Bootstrapt 5/ Ref: https://www.w3schools.com/bootstrap5/index.php-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--Directive for the user-->
+    <h3 class="p-1 bg-success text-white text-center">Please answer this question</h3>
+    <!--Form to recieve the user answer-->
+    <form method="post" action="#" th:action="@{/secure/resultPage/}+${poll.pollID}">
+        <!--Poll question-->
+        <p class="container d-flex justify-content-center text-success" th:text="${poll.question}">Poll question</p>
+        <div class="container d-flex justify-content-center">
+            <div class="form-check p-50">
+                <!--Radio Buttons for poll's answers-->
+                <input type="radio" class="form-check-input" name="poll" th:name="selected" th:text="${poll.answer1}"
+                    th:value="${poll.answer1}"><br>
+                <input type="radio" class="form-check-input" name="poll" th:name="selected" th:text="${poll.answer2}"
+                    th:value="${poll.answer2}"><br>
+                <input type="radio" class="form-check-input" name="poll" th:name="selected" th:text="${poll.answer3}"
+                    th:value="${poll.answer3}"><br>
+            </div>
+        </div>
+        <br><br>
+        <div class="container d-flex justify-content-center ">
+            <!--Submit button-->
+            <input type="submit" class="btn btn-success w-50" value="Vote!">
+        </div>
+    </form>
+</body>
+
+</html>
