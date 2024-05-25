@@ -1,4 +1,4 @@
-# Pollin-Web-App
+# Polling-Web-App
 
 • Developed a polling web application with Java, Spring Boot, and Thymeleaf following MVC pattern
 • Implemented CRUD operations to store poll and user information and connected the web app to the MySQL database
